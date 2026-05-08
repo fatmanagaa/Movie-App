@@ -37,6 +37,7 @@ class OnboardingScreen extends StatelessWidget {
     ),
     OnboardingEntity(
       image: AppAssets.onboarding5,
+
       title: "Rate, Review, and Learn",
       description:
           "Share your thoughts on the movies you've watched. Dive deep into film details and help others discover great movies with your reviews.",
@@ -58,7 +59,10 @@ class OnboardingScreen extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             body: PageView.builder(
+
+
               controller: controller,
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: pages.length,
               onPageChanged: (index) {
                 context.read<OnboardingCubit>().changePage(index);
